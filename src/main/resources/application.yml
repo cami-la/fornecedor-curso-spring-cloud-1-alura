@@ -1,0 +1,34 @@
+
+#PORTA SERVIDOR
+server:
+  port: 8081
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+
+#HIBERNATE
+#spring.jpa.hibernate.ddl-auto=update
+#spring.jpa.show-sql=true
+#spring.jpa.openInView=true
+#spring.jpa.database-platform=org.hibernate.dialect.PostgreSQLDialect
+#logging.level.org.hibernate.SQL=DEBUG
+#loggin.level.org.hibernate.type=TRACE
+
+
+
+#server:
+#  port: 8081
+
+#spring:
+#  datasource:
+#    url: jdbc:postgresql://localhost:5432/fornecedor
+#    username: cami
+#    password: root
+#  jpa:
+#    hibernate:
+#      ddl-auto: create
+#      show-sql: true
