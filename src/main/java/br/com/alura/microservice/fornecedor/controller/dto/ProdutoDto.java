@@ -11,6 +11,8 @@ public class ProdutoDto {
 
     private String nome;
 
+    private String estado;
+
     private String descricao;
 
     private BigDecimal preco;
@@ -18,6 +20,7 @@ public class ProdutoDto {
     public ProdutoDto(Produto produto) {
         this.id = produto.getId();
         this.nome = produto.getNome();
+        this.estado = produto.getEstado();
         this.descricao = produto.getDescricao();
         this.preco = produto.getPreco();
     }
@@ -52,6 +55,14 @@ public class ProdutoDto {
 
     public void setPreco(BigDecimal preco) {
         this.preco = preco;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
     }
 
     public static List<ProdutoDto> convert (List<Produto> produtos) {

@@ -14,6 +14,8 @@ public class Produto {
 
     private String nome;
 
+    private String estado;
+
     private String descricao;
 
     private BigDecimal preco;
@@ -21,9 +23,10 @@ public class Produto {
     public Produto() {
     }
 
-    public Produto(Long id, String nome, String descricao, BigDecimal preco) {
+    public Produto(Long id, String nome, String estado, String descricao, BigDecimal preco) {
         this.id = id;
         this.nome = nome;
+        this.estado = estado;
         this.descricao = descricao;
         this.preco = preco;
     }
@@ -60,4 +63,11 @@ public class Produto {
         this.preco = preco;
     }
 
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
 }
