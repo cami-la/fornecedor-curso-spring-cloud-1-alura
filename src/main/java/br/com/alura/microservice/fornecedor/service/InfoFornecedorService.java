@@ -10,15 +10,12 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-@AllArgsConstructor(onConstructor = @__(@Autowired))
 public class InfoFornecedorService {
-
+    @Autowired
     private InfoFornecedorRepository infoRepository;
 
     public List<InfoFornecedorDto> getInfoPorEstado(String estado) {
         List<InfoFornecedor> byEstado = infoRepository.findByEstado(estado);
         return InfoFornecedorDto.convert(byEstado);
-
-
     }
 }

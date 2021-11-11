@@ -14,14 +14,48 @@ public class Pedido {
     @Enumerated(EnumType.STRING)
     private PedidoStatus status;
 
-    @OneToMany @JoinColumn(name = "pedidoId")
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "pedidoId")
     private List<PedidoItem> itensDoPedido;
 
     public Pedido() {
+        this.status = PedidoStatus.RECIBIDO;
     }
 
     public Pedido(List<PedidoItem> itensDoPedido) {
         this.status = PedidoStatus.RECIBIDO;
+        this.itensDoPedido = itensDoPedido;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Integer getTempoDePreparo() {
+        return tempoDePreparo;
+    }
+
+    public void setTempoDePreparo(Integer tempoDePreparo) {
+        this.tempoDePreparo = tempoDePreparo;
+    }
+
+    public PedidoStatus getStatus() {
+        return status;
+    }
+
+    public void setStatus(PedidoStatus status) {
+        this.status = status;
+    }
+
+    public List<PedidoItem> getItensDoPedido() {
+        return itensDoPedido;
+    }
+
+    public void setItensDoPedido(List<PedidoItem> itensDoPedido) {
         this.itensDoPedido = itensDoPedido;
     }
 }
