@@ -2,6 +2,7 @@ package br.com.alura.microservice.fornecedor.controller;
 
 import br.com.alura.microservice.fornecedor.controller.dto.ItemDoPedidoDto;
 import br.com.alura.microservice.fornecedor.model.Pedido;
+import br.com.alura.microservice.fornecedor.model.Produto;
 import br.com.alura.microservice.fornecedor.service.PedidoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -20,9 +21,10 @@ public class PedidoController {
         return pedidoService.realizaPedido(itensEQuantidadeEscolhidoPeloCliente);
     }
 
-    /*@GetMapping(value = "/{idDoPedido}")
-    public Pedido getPedidoPorId(@PathVariable Long idDoPedido) {
+    @GetMapping(value = "/{idDoPedido}")
+    public ResponseEntity<Pedido> getPedidoPorId(@PathVariable Long idDoPedido) {
         return pedidoService.getPedidoPorId(idDoPedido);
-    }*/
+    }
+
 
 }

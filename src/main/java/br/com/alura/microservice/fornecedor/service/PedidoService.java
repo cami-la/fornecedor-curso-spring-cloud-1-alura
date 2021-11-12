@@ -1,11 +1,13 @@
 package br.com.alura.microservice.fornecedor.service;
 
 import br.com.alura.microservice.fornecedor.controller.dto.ItemDoPedidoDto;
+import br.com.alura.microservice.fornecedor.controller.dto.PedidoDto;
 import br.com.alura.microservice.fornecedor.model.Pedido;
 import br.com.alura.microservice.fornecedor.model.PedidoItem;
 import br.com.alura.microservice.fornecedor.model.Produto;
 import br.com.alura.microservice.fornecedor.repository.PedidoRepository;
 import br.com.alura.microservice.fornecedor.repository.ProdutoRepository;
+import com.sun.jersey.api.NotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -82,4 +84,10 @@ public class PedidoService {
                 }).collect(Collectors.toList());
         return listaComOPedidoDeCadaItemMontado;
     }
+
+    public ResponseEntity<Pedido> getPedidoPorId(Long idDoPedido) {
+        return ResponseEntity.ok(pedidoRepository.findById(idDoPedido).get());
+    }
+
+
 }
