@@ -1,5 +1,8 @@
 package br.com.alura.microservice.fornecedor.model;
 
+import br.com.alura.microservice.fornecedor.controller.dto.ProdutoDto;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -29,6 +32,13 @@ public class Produto {
         this.estado = estado;
         this.descricao = descricao;
         this.preco = preco;
+    }
+    public Produto(ProdutoDto produtoDto){
+        this.id = produtoDto.getId();
+        this.nome = produtoDto.getNome();
+        this.estado = produtoDto.getEstado();
+        this.descricao = produtoDto.getDescricao();
+        this.preco = produtoDto.getPreco();
     }
 
     public Long getId() {
@@ -70,4 +80,5 @@ public class Produto {
     public void setEstado(String estado) {
         this.estado = estado;
     }
+
 }

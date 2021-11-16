@@ -17,6 +17,9 @@ public class ProdutoDto {
 
     private BigDecimal preco;
 
+    public ProdutoDto() {
+    }
+
     public ProdutoDto(Produto produto) {
         this.id = produto.getId();
         this.nome = produto.getNome();
